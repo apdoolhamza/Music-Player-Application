@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Player Application Using Javascript</title>
+    <!-- Css file -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- font-awesome icon file -->
+     <link rel="stylesheet" href="css/fontawesome/all.css">
+</head>
+<body>
+  <!--Container-->
+  <div class="wrapper">
+
+  <header>
+  <!-- mute volume icon-->
+    <p class="unMuteValume" style="display:none"><i class="fas fa-volume-mute"></i></p>
+
+    <!-- unmute volume icon-->
+    <p class="muteVolume"><i class="fas fa-volume-up"></i></p>
+    
+    <!--topTitle-->
+  <p class="topTitle">Now Playing</p>
+  
+  <!--Menubar icon-->
+   <p><img src="img/menuIcon.png" class="menuIcon" width="23" alt=""></p>
+  </header>
+  
+    <!-- player Top Details -->
+<div class="playerTopDetails">
+ <!-- track name -->
+    <marquee><div class="track-name"></div></marquee>  
+      
+      <!--track number-->
+      <div class="track-number"></div>
+</div>
+
+<!--play Cover-->
+  <p class="playCover">
+    <span><span></span></span>
+  </p>
+  
+<!-- player CurrTime & TotalDuration Container -->
+    <div class="playerSliderContainer">
+      
+      <!--player Current Time-->
+      <div class="playerCurrentTime">00:00</div>
+      
+      <!-- Input seek slider range -->
+      <input type="range" min="1" max="100"
+        value="0" class="seekSlider" onchange="seekTo()">
+        
+        <!--player Total Duration-->
+      <div class="playerTotalDuration">00:00</div>
+    </div>
+    
+<!-- player Buttons -->
+  <div class="playerButtons">
+    
+    <!--previous track button-->
+  <div class="prev-track" onclick="prevTrack()">
+  <i class="fa fa-step-backward fa-2x"></i>
+  </div>
+  
+  <!--Play/Pause track button-->
+  <div class="playpause-track" onclick="playpauseTrack()">
+  <i class="fa fa-play-circle fa-4x"></i>
+  </div>
+  
+  <!--next track button-->
+  <div class="next-track" onclick="nextTrack()">
+  <i class="fa fa-step-forward fa-2x"></i>
+  </div>
+  
+   </div>
+   
+    </div>
+
+
+   <!-- play list container-->
+   <div class="playListContainer">
+     
+     <!--hide playListContainer icon-->
+     <i class="fas fa-chevron-down"></i>
+ 
+      <!--upload new songs input-->
+     <label for="uploadMusics"><i class="fas fa-upload fa-2x"></i>
+     <input type="file" multiple id="uploadMusics" accept="audio/*" hidden>
+     </label>
+
+     <!--All uploaded songs list container-->
+     <output class="musicListContainer">
+     </output>
+     
+   </div>
+   
+    <!-- js file -->
+  <script async type="text/javascript" src="script/index.js"></script>
+</body>
+</html>
